@@ -1,11 +1,13 @@
 {
-    "name": "Valorant Sucks",
-    "version": "69.420.0",
-    "description": "stop spending money on that game",
-    "manifest_version": 3,
-    "author": "Lolzkarry",
-    "action":{
-        "default_popup": "index.html",
-        "default_title": "Valorant Sucks"
-    }
+ "name": "Catspew",
+ "version": "0.0.1",
+ "description": "Makes your schedules",
+ "manifest_version": 1,
+ "author": "William Chen",
+ "permissions": ["storage", "declarativeContent", "activeTab", "scripting"],
+ "host_permissions": [""],
+ "action":{
+ "default_popup": "index.html",
+ "default_title": "Catspew"
+ }
 }
