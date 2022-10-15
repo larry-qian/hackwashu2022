@@ -14,7 +14,7 @@ document.getElementById('buttonTwo').addEventListener('click', insertScript)
  
 // This function selects a random topic from an array and 
 function autoSearch() {
- document.getElementByName("ctl00$Body$ctl15").click();
+ document.getElementByName('ctl00$Body$ctl15').click();
  
 //  var searchBar = document.getElementByName("ctl00$Body$ctl15");
  
