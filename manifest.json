@@ -1,11 +1,11 @@
 {
-    "name": "Covid-19 Stats UK",
-    "version": "1.0.0",
-    "description": "latest covid data of UK",
+    "name": "Valorant Sucks",
+    "version": "69.420.0",
+    "description": "stop spending money on that game",
     "manifest_version": 3,
-    "author": "Sampurna Chapagain",
+    "author": "Lolzkarry",
     "action":{
         "default_popup": "index.html",
-        "default_title": "Latest Covid Report"
+        "default_title": "Valorant Sucks"
     }
 }
