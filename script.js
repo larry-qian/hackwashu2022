@@ -1,9 +1,24 @@
-async function fetchData() {
-    const res=await fetch ("https://api.coronavirus.data.gov.uk/v1/data");
-    const record=await res.json();
-    document.getElementById("date").innerHTML=record.data[0].date;
-    document.getElementById("areaName").innerHTML=record.data[0].areaName;
-    document.getElementById("latestBy").innerHTML=record.data[0].latestBy;
-    document.getElementById("deathNew").innerHTML=record.data[0].deathNew;
+// This function inserts our autoSearch function into the page's code
+function insertScript() {
+ // This selects the focused tab for the operation and passes the autoSearch function
+ chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+ chrome.scripting.executeScript({target: {tabId: tabs[0].id}, function: autoSearch})
+ })
+ 
+ // This closes the extension pop-up to select the website search bar
+ window.close();
 }
-fetchData();
+ 
+// This is an event listener that detects clicks on our "Start Random Search" button
+document.getElementById('buttonTwo').addEventListener('click', insertScript)
+ 
+// This function selects a random topic from an array and 
+function autoSearch() {
+ document.getElementById("ctl00$Body$ctl15").click();
+ 
+//  var searchBar = document.getElementByName("ctl00$Body$ctl15");
+ 
+//  searchBar.value = searchBar.value + selection;
+ 
+//  document.getElementById("searchform2").submit();
+}
