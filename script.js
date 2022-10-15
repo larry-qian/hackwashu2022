@@ -24,7 +24,7 @@ function autoSearch() {
 }
 const times = [];
 const dates = [];
-
+const regsht = [];
 function webScrapeCN() {
     document.querySelectorAll('.CrsOpen > table a')[1].textContent;
 }
@@ -46,5 +46,11 @@ function webScrapeDate() {
 		}else { 
 			break;
 		}
+	}
+}
+
+function webScrapeWkSht() {
+	for(let i = 2; i< (document.querySelectorAll('#grvFirstChoices > tbody > tr').length+1); i++) {
+		regsht.push(document.querySelectorAll('#grvFirstChoices > tbody > tr:nth-child('+i+') > td:nth-child(4) > span')[0].textContent.trim());
 	}
 }
