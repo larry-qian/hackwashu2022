@@ -2,7 +2,7 @@
  "name": "Catspew",
  "version": "0.0.1",
  "description": "Makes your schedules",
- "manifest_version": 1,
+ "manifest_version": 3,
  "author": "William Chen",
  "permissions": ["storage", "declarativeContent", "activeTab", "scripting"],
  "host_permissions": [""],
