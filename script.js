@@ -22,3 +22,29 @@ function autoSearch() {
  
 //  document.getElementById("searchform2").submit();
 }
+const times = [];
+const dates = [];
+
+function webScrapeCN() {
+    document.querySelectorAll('.CrsOpen > table a')[1].textContent;
+}
+
+function webScrapeTime() {
+	for(let i = 0; i < (document.querySelectorAll('.MainTableRow').length); i++) {
+		if(!isNaN(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(2)')[i*3].textContent)) {
+			times.push(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(4)')[i*2].textContent);
+		}else{
+			break;
+		}
+	}
+}
+
+function webScrapeDate() {
+	for(let i = 0; i < (document.querySelectorAll('.MainTableRow').length); i++) {
+		if(!isNaN(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(2)')[i*3].textContent)) {
+			dates.push(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(3)')[i*2].textContent);
+		}else { 
+			break;
+		}
+	}
+}
