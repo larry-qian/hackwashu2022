@@ -2,7 +2,7 @@
 function insertScript() {
  // This selects the focused tab for the operation and passes the autoSearch function
  chrome.tabs.query({active: true, currentWindow: true}, tabs => {
- chrome.scripting.executeScript({target: {tabId: tabs[0].id}, function: autoSearch})
+ chrome.scripting.executeScript({target: {tabId: tabs[0].id}, function: mainFunct})
  })
  
  // This closes the extension pop-up to select the website search bar
@@ -13,7 +13,7 @@ function insertScript() {
 document.getElementById('buttonTwo').addEventListener('click', insertScript)
  
 // This function selects a random topic from an array and 
-function autoSearch() {
+function mainFunct() {
  document.querySelector('[name="ctl00$Body$ctl15"]').click();
  
 //  var searchBar = document.getElementByName("ctl00$Body$ctl15");
