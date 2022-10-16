@@ -1,10 +1,22 @@
 class Course {
-  constructor(name, times, dates) {
-    this.name = name;
-    this.times = times;
-    this.dates = dates;
-  }
+    constructor(name, times, dates, noSections, prtimes, prdates) {
+        this.name = name;
+        this.times = times;
+        this.dates = dates;
+        this.noSections = noSections;
+        this.prtimes = prtimes;
+        this.prdates = prdates;
+    }
 }
+
+schedule[
+    {
+        "name": '',
+        "time": '',
+        "dates": ''
+    }
+]
+
 
 function insertScript1() {
   chrome.tabs.query({
@@ -57,6 +69,15 @@ function getClasses() {
     console.log(regsht[i - 2])
   }
   localStorage.setItem('numCourses', numCourses);
+}
+
+var timetable = [5];
+for (let i = 0; i < 5; i++) {
+    timetable[i] = new Array(144);
+    for(let j = 0; j < 144; j++)
+    {
+        timetable[i][j] = 0;
+    }
 }
 
 function mainFunct() {
