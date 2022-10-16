@@ -64,7 +64,7 @@ function mainFunct() {
 		var name = regsht[i];
 		webScrapeTime();
 		webScrapeDate();
-		eval(regsht[i]+ " = new Course(regsht[i], timeslist, dateslist");
+		eval(name+ " = new Course(name, timeslist, dateslist");
 	}
 	
 	
