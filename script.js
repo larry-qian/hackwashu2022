@@ -9,14 +9,10 @@ class Course {
     }
 }
 
-schedule[
-    {
-        "name": '',
-        "time": '',
-        "dates": ''
-    }
-]
 
+function clickHandler() {
+      window.location.href="figma.html";
+ }
 
 function insertScript1() {
   chrome.tabs.query({
