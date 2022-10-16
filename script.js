@@ -13,9 +13,10 @@ function insertScript() {
 	})
 	window.close();
 }
- 
+
 document.getElementById('buttonTwo').addEventListener('click', insertScript)
- 
+document.getElementById('buttonThree').addEventListener('click', insertScript)
+
 const timeslist = [];
 const dateslist = [];
 const regsht = [];
