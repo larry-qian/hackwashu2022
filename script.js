@@ -65,6 +65,8 @@ function mainFunct() {
   var timesList = [];
   var datesList = [];
   var numSections = 0;
+  var courses = [];
+
 
   function webScrapeTime() {
     for (let i = 0; i < (document.querySelectorAll('.MainTableRow').length); i++) {
@@ -93,7 +95,7 @@ function mainFunct() {
   var searchBar = document.getElementById("Body_txtSearchKeyword");
   let i = localStorage.getItem('i');
   searchBar.value = localStorage.getItem('' + i)
-  document.querySelector('[name="ctl00$Body$ctl15"]').click();
+  //document.querySelector('[name="ctl00$Body$ctl15"]').click();
   var name = localStorage.getItem('' + i-1);
   timesList.length = 0;
   datesList.length = 0;
@@ -103,4 +105,15 @@ function mainFunct() {
     localStorage.setItem(name + '0' + j, timesList[j] + datesList[j]);
   }
   localStorage.setItem('i', parseInt(i) + 1 + '');
+  localStorage.setItem(i + 'numSections', numSections);
+  courses.push({
+        "name": localStorage.getItem('' + i-1),
+        "times": timesList,
+        "dates": datesList,
+        "noSections": numSections,
+        "prtimes": [],
+        "prdates": []
+  })
+  console.log(courses[1]);
 }
+
