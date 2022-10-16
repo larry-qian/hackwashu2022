@@ -1,3 +1,20 @@
+class Section {
+	constructor(number, time = []) {
+		this.number = number;
+		this.time = time;
+	}
+}
+
+class Course {
+	constructor(name, sections = []) {
+		this.name = name;
+		this.sections = sections;
+	}
+}
+
+
+
+
 // This function inserts our autoSearch function into the page's code
 function insertScript() {
  // This selects the focused tab for the operation and passes the autoSearch function
