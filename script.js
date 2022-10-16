@@ -27,6 +27,8 @@ function webScrapeCN() {
 }
 
 function webScrapeTime() {
+	timeslist = [];
+	numSections = 0;
 	for(let i = 0; i < (document.querySelectorAll('.MainTableRow').length); i++) {
 		if(!isNaN(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(2)')[i*3].textContent)) {
 			timeslist.push(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(4)')[i*2].textContent);
@@ -38,6 +40,7 @@ function webScrapeTime() {
 }
 
 function webScrapeDate() {
+	dateslist = []
 	for(let i = 0; i < (document.querySelectorAll('.MainTableRow').length); i++) {
 		if(!isNaN(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(2)')[i*3].textContent)) {
 			dateslist.push(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(3)')[i*2].textContent);
@@ -57,15 +60,17 @@ function webScrapeWkSht() {
 
 
 function mainFunct() {
-	document.querySelector('[name="ctl00$Body$ctl15"]').click();
-	webScrapeWkSht();
-	for(let i = 0; i < regsht.length; i++) {
-		//webScrapeCN();
+	var searchBar = document.getElementById("Body_txtSearchKeyword");
+	for(let j = 0; j < numCourses; j++){
+		searchBar.value = searchBar.value + regsht[i];
+		document.querySelector('[name="ctl00$Body$ctl15"]').click();
+		webScrapeWkSht();
 		var name = regsht[i];
 		webScrapeTime();
 		webScrapeDate();
 		eval(name+ " = new Course(name, timeslist, dateslist");
 	}
+	
 	
 	
 }
