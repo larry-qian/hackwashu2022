@@ -71,7 +71,4 @@ function mainFunct() {
 		webScrapeDate();
 		eval(name+ " = new Course(name, timeslist, dateslist");
 	}
-	
-	
-	
 }
