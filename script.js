@@ -6,20 +6,28 @@ class Course {
     }
 }
 
-
-function insertScript() {
+function insertScript1() {
 	chrome.tabs.query({active: true, currentWindow: true}, tabs => {
 	chrome.scripting.executeScript({target: {tabId: tabs[0].id}, function: mainFunct})
 	})
 	window.close();
 }
 
-document.getElementById('buttonTwo').addEventListener('click', insertScript)
-document.getElementById('buttonThree').addEventListener('click', insertScript)
+function insertScript2(){
+	chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+	chrome.scripting.executeScript({target: {tabId: tabs[0].id}, function: console.log('Generate')})
+	})
+	window.close();
+}
 
-const timeslist = [];
-const dateslist = [];
-const regsht = [];
+ 
+document.getElementById('buttonGather').addEventListener('click', insertScript1)
+document.getElementById('buttonGenerate').addEventListener('click', insertScript2)
+
+ 
+var timeslist = [];
+var dateslist = [];
+var regsht = [];
 var numCourses = 0;
 var numSections = 0;
 
@@ -59,13 +67,16 @@ function webScrapeWkSht() {
 	
 }
 
+// funciton getClasses() {
+// 	console.log(webScrapeWkSht());
+// }
 
 function mainFunct() {
+	document.querySelector('[name="ctl00$Body$ctl15"]').click();
 	var searchBar = document.getElementById("Body_txtSearchKeyword");
 	for(let j = 0; j < numCourses; j++){
 		searchBar.value = searchBar.value + regsht[i];
 		document.querySelector('[name="ctl00$Body$ctl15"]').click();
-		webScrapeWkSht();
 		var name = regsht[i];
 		webScrapeTime();
 		webScrapeDate();
