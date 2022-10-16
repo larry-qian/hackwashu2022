@@ -10,6 +10,8 @@ document.getElementById('buttonTwo').addEventListener('click', insertScript)
 const times = [];
 const dates = [];
 const regsht = [];
+var numCourses = 0;
+var numSections = 0;
 function webScrapeCN() {
     document.querySelectorAll('.CrsOpen > table a')[1].textContent;
 }
@@ -18,6 +20,7 @@ function webScrapeTime() {
 	for(let i = 0; i < (document.querySelectorAll('.MainTableRow').length); i++) {
 		if(!isNaN(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(2)')[i*3].textContent)) {
 			times.push(document.querySelectorAll('.MainTableRow tbody tr td:nth-child(4)')[i*2].textContent);
+			numSections++;
 		}else{
 			break;
 		}
@@ -37,7 +40,9 @@ function webScrapeDate() {
 function webScrapeWkSht() {
 	for(let i = 2; i< (document.querySelectorAll('#grvFirstChoices > tbody > tr').length+1); i++) {
 		regsht.push(document.querySelectorAll('#grvFirstChoices > tbody > tr:nth-child('+i+') > td:nth-child(4) > span')[0].textContent.trim());
+		numCourses++;
 	}
+	
 }
 
 
